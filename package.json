@@ -17,11 +17,9 @@
   },
   "homepage": "https://github.com/alumis/material-design#readme",
   "devDependencies": {
-    "@alumis/observables": "^2.0.14",
-    "@material/button": "^3.1.0"
+    "@alumis/observables": "^2.0.14"
   },
   "peerDependencies": {
-    "@alumis/observables": "^2.0.14",
-    "@material/button": "^3.1.0"
+    "@alumis/observables": "^2.0.14"
   }
 }
