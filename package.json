@@ -1,6 +1,6 @@
 {
   "name": "@alumis/material-design",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Material Design components for Alumis",
   "main": "index.js",
   "scripts": {
