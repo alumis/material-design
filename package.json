@@ -1,0 +1,27 @@
+{
+  "name": "@alumis/material-design",
+  "version": "2.0.0",
+  "description": "Material Design components for Alumis",
+  "main": "index.js",
+  "scripts": {
+    "bump": "git add -A & git commit -am 'bumped' && npm version patch && npm publish && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alumis/material-design.git"
+  },
+  "author": "Emil Müller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alumis/material-design/issues"
+  },
+  "homepage": "https://github.com/alumis/material-design#readme",
+  "devDependencies": {
+    "@alumis/observables": "^2.0.14",
+    "@material/button": "^3.1.0"
+  },
+  "peerDependencies": {
+    "@alumis/observables": "^2.0.14",
+    "@material/button": "^3.1.0"
+  }
+}
