@@ -6,6 +6,9 @@
   "scripts": {
     "bump": "git add -A & git commit -am 'bumped' && npm version patch && npm publish && git push --follow-tags"
   },
+  "files":[
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alumis/material-design.git"

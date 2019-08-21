@@ -1,2 +1,1 @@
-./material-components-web/*
-!./material-components-web/packages
+.gitmodules
