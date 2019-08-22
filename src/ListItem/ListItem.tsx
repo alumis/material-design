@@ -1,4 +1,5 @@
 import { Component, Attributes, createNode } from "@alumis/observables/src/JSX";
+createNode;
 
 export class ListItem extends Component<HTMLLIElement> {
 
@@ -6,7 +7,7 @@ export class ListItem extends Component<HTMLLIElement> {
 
         super();
 
-        (this.node = <HTMLLIElement>createNode("li", attrs, children)).classList.add("mdc-list-item");
+        this.node = <li class="mdc-list-item"><span class="mdc-list-item__text">{children}</span></li>;
     }
 }
 
