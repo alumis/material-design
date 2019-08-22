@@ -30,12 +30,24 @@ export class Select extends Component<HTMLDivElement> {
                         {children}
                     </ul>
                 </div>
-                <span id={labelId} class="mdc-floating-label mdc-floating-label--float-above">Pick a Food Group</span>
-                <div class="mdc-line-ripple"></div>
             </div>;
 
-        if (theme === SelectTheme.Outlined)
+        if (theme === SelectTheme.Outlined) {
             this.node.classList.add("mdc-select--outlined");
+            this.node.appendChild(
+                <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                        <span id={labelId} class="mdc-floating-label mdc-floating-label--float-above">{label}</span>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                </div>);
+        }
+
+        else {
+            this.node.appendChild(<span id={labelId} class="mdc-floating-label mdc-floating-label--float-above">{label}</span>);
+            this.node.appendChild(<div class="mdc-line-ripple"></div>);
+        }
 
         MDCSelect.attachTo(this.node);
     }
@@ -43,7 +55,7 @@ export class Select extends Component<HTMLDivElement> {
 
 export interface SelectAttributes extends Attributes {
     theme?: SelectTheme;
-    label?: any | Observable<any> | (() => any);
+    label: any | Observable<any> | (() => any);
 }
 
 export enum SelectTheme {
