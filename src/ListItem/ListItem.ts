@@ -1,5 +1,4 @@
 import { Component, Attributes, createNode, appendCleanCallback } from "@alumis/observables/src/JSX";
-import "./_list-item.scss";
 
 export class ListItem extends Component<HTMLLIElement> {
 
