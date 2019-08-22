@@ -1,4 +1,4 @@
-import { Observable, isObservable, co, o } from "@alumis/observables";
+import { Observable, isObservable, co, o } from "@alumis/observables/src/Observable";
 import { Component, Attributes, createNode, appendCleanCallback } from "@alumis/observables/src/JSX";
 import { MDCRipple } from '@material/ripple';
 
@@ -24,7 +24,7 @@ export class Button extends Component<HTMLButtonElement> {
         (this.node = <HTMLButtonElement>createNode("button", attrs, label)).type = submits ? "submit" : "button";
 
         this.node.classList.add("mdc-button");
-        this.ripple = new MDCRipple(this.node);
+        MDCRipple.attachTo(this.node);
 
         if (isObservable(theme)) {
             appendCleanCallback(this.node, (<Observable<any>>theme).subscribeInvoke(this.themeAction).unsubscribeAndRecycle);
@@ -46,7 +46,6 @@ export class Button extends Component<HTMLButtonElement> {
         }
     }
 
-    ripple: MDCRipple;
     themeAsObservable: Observable<ButtonTheme>;
 
     themeAction = (newTheme: ButtonTheme, oldTheme: ButtonTheme) => {

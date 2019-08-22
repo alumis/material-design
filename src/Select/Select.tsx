@@ -1,12 +1,22 @@
 import { Component, Attributes, createNode, generateHTMLElementId } from "@alumis/observables/src/JSX";
 createNode;
 import { MDCSelect } from "@material/select";
+import { Observable } from "@alumis/observables/src/Observable";
 
 export class Select extends Component<HTMLDivElement> {
 
     constructor(attrs: SelectAttributes, children: any[]) {
 
         super();
+
+        if (attrs) {
+
+            var theme = attrs.theme;
+            var label = attrs.label;
+
+            delete attrs.theme;
+            delete attrs.label;
+        }
 
         let selectedTextId = generateHTMLElementId(), labelId = generateHTMLElementId();
 
@@ -24,10 +34,20 @@ export class Select extends Component<HTMLDivElement> {
                 <div class="mdc-line-ripple"></div>
             </div>;
 
+        if (theme === SelectTheme.Outlined)
+            this.node.classList.add("mdc-select--outlined");
+
         MDCSelect.attachTo(this.node);
     }
 }
 
 export interface SelectAttributes extends Attributes {
+    theme?: SelectTheme;
+    label?: any | Observable<any> | (() => any);
+}
 
+export enum SelectTheme {
+
+    Filled,
+    Outlined
 }
