@@ -1,7 +1,6 @@
 import { Component, Attributes, createNode, generateHTMLElementId } from "@alumis/observables/src/JSX";
 createNode;
 import { MDCSelect } from "@material/select";
-import "./_select.scss";
 
 export class Select extends Component<HTMLDivElement> {
 

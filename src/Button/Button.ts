@@ -1,7 +1,6 @@
 import { Observable, isObservable, co, o } from "@alumis/observables";
 import { Component, Attributes, createNode, appendCleanCallback } from "@alumis/observables/src/JSX";
 import { MDCRipple } from '@material/ripple';
-import "./_button.scss";
 
 export class Button extends Component<HTMLButtonElement> {
 
