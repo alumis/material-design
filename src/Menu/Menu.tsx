@@ -1,6 +1,10 @@
 import { Component, Attributes, createNode } from "@alumis/observables/src/JSX";
 createNode;
 import { ListItem, ListItemAttributes } from "../ListItem/ListItem";
+import { MDCMenu } from "@material/menu";
+
+const menu = new MDCMenu(document.querySelector('.mdc-menu'));
+menu.open = true;
 
 export class Menu extends Component<HTMLDivElement> {
 
@@ -14,6 +18,22 @@ export class Menu extends Component<HTMLDivElement> {
           {children}
         </ul>
       </div>;
+
+      this._mdcMenu = new MDCMenu(this.node);
+  }
+
+  private _mdcMenu: MDCMenu;
+
+  get open() {
+    return this._mdcMenu.open;
+  }
+
+  set open(value: boolean) {
+    this._mdcMenu.open = value;
+  }
+
+  toggle() {
+    this.open = !this.open;
   }
 }
 
